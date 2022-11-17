@@ -1,0 +1,40 @@
+
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+{% for post in news %}
+<ul>
+    <li>
+        <a href="{{path('post', {id: post.id})}}">
+        <div style="display: flex">
+            <span style="font-weight: 900"> {{ post.title|e }}</span>
+        </div>
+        <small>{{ post.description|e }}</small>
+       </a>
+   </li>
+</ul>
+{% endfor %}
+
+{% if maxPages > 1 %}
+<ul class="pagination pagination-sm" style="margin-left: 100px">
+    {# `«` arrow  #}
+    <li {{ thisPage == 1 ? 'class="disabled"' }} style="margin-right: 20px">
+        <a href="{{ path('index', {page: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>
+    </li>
+
+    {# Render each page number #}
+    {% for i in 1..maxPages %}
+    <li {{ thisPage == i ? 'class="active"' }} style="margin-right: 20px">
+    <a href="{{ path('index', {page: i}) }}">{{ i }}</a>
+    </li>
+    {% endfor %}
+
+    {# `»` arrow #}
+    <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+        <a href="{{ path('index', {page: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>
+    </li>
+</ul>
+{% endif %}
+
+{% endblock %}
