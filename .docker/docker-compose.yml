@@ -52,6 +52,13 @@ services:
     env_file:
       - .env.nginx.local
 
+  cron:
+    container_name: news-cron
+    build: ./cron
+    volumes:
+      - ../:/var/www
+      - ./log/cron:/var/log/cron
+
 volumes:
   symfony_dockerized_app_sync:
     external: true

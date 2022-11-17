@@ -1,0 +1,1 @@
+*/2 * * * * symfony console app:news:fetch >> /var/log/cron/cron.log 2>&1

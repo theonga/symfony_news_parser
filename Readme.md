@@ -20,4 +20,4 @@ It is composed by 4 containers:
 
 ## How to fetch the news
 
-There is a command for fetching news from ([Pindula API](https://zero.pindula.co.zw/api/posts/) : symfony console app:news:fetch
+There is a command for fetching news from [Pindula API](https://zero.pindula.co.zw/api/posts/) : symfony console app:news:fetch
