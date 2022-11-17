@@ -1,4 +1,4 @@
-# News Parser using PHP 7.4 Symfony 5.4, MySQL, RabbitMQ, Docker
+# News Parser using PHP 7.4 Symfony 5.4, MySQL, RabbitMQ, Nginx Docker
 
 ## This is a complete stack for running Symfony 5.4 into Docker containers using docker-compose tool with docker-sync library.
 
@@ -20,4 +20,4 @@ It is composed by 4 containers:
 
 ## How to fetch the news
 
-There is a command for fetching news: symfony console app:news:fetch
+There is a command for fetching news from ([Pindula API](https://zero.pindula.co.zw/api/posts/) : symfony console app:news:fetch
